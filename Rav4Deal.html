@@ -106,13 +106,13 @@
         font-size: 13px;
       }
 
-      /* Main layout */
+      /* Main layout: always stacked */
 
       .main-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
+        display: flex;
+        flex-direction: column;
         gap: 16px;
-        align-items: start;
+        align-items: stretch;
       }
 
       @media (min-width: 960px) {
@@ -120,9 +120,8 @@
           padding: 24px 20px 32px;
         }
 
-        .main-grid {
-          grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-          gap: 20px;
+        .page-shell {
+          gap: 18px;
         }
       }
 
@@ -408,10 +407,10 @@
             <header className="site-header">
               <div className="site-header-left">
                 <div className="site-logo-wrap">
-                  <img src={LOGO_URL} className="site-logo" alt="AZDLR logo" />
+                  <img src={LOGO_URL} className="site-logo" alt="AZ DLR LLC logo" />
                 </div>
                 <div className="site-title-block">
-                  <span className="site-title">AZDLR</span>
+                  <span className="site-title">AZ DLR LLC</span>
                   <span className="site-subtitle">Vehicle sales and consignment</span>
                 </div>
               </div>
@@ -423,9 +422,8 @@
               </div>
             </header>
 
-            {/* Main responsive layout */}
+            {/* Main layout: vehicle card stacked above summary card */}
             <div className="main-grid">
-              {/* Vehicle visual card */}
               <article className="vehicle-card">
                 <div className="vehicle-photo-wrapper">
                   <img
@@ -449,11 +447,10 @@
                 </div>
               </article>
 
-              {/* Deal numbers card */}
               <article className="deal-card">
                 <header className="deal-header">
                   <p className="deal-label">Purchase summary</p>
-                  <h1>RAV4 Prime purchase from AZDLR</h1>
+                  <h1>RAV4 Prime purchase from AZ DLR LLC</h1>
 
                   <div className="vin-row">
                     <span className="vin-label">VIN</span>
